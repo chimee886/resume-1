@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>我的个人简历</title>
+    <link rel="stylesheet" href="loading.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="//at.alicdn.com/t/font_1400633_8fif9o4un06.js"></script>
+</head>
+
+<body>
+    <div id="siteLoading" class="welcomeLoading active">
+        <div class="loadingCircle"></div>
+    </div>
+    <div id="topNavBar" class="topNavBar clearfix">
+        <a class="logo" href="#" alt="logo">
+            <span class="rs">RS</span>
+            <span class="card">card</span>
+        </a>
+        <nav class="menu">
+            <ul id="ulColor" class="clearfix">
+                <li><a href="#aboutMe">关于</a></li>
+                <li><a href="#mySkills">技能</a></li>
+                <li class="liTags">
+                    <a href="#myPortfolio"> 作品</a>
+                    <ul class="secondLabel">
+                        <li>作品1</li>
+                        <li>作品2</li>
+                        <li>作品3</li>
+                    </ul>
+                </li>
+                <li class="liTags">
+                    <a href="#">博客</a>
+                    <ul class="secondLabel">
+                        <li>博客1</li>
+                        <li>博客2</li>
+                        <li>博客3</li>
+                    </ul>
+                </li>
+                <li><a href="#">日历</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">其他</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
+    <main data-x id="aboutMe">
+        <div class="userCard">
+            <div class="pictureandtext" class="clearfix">
+                <div class="picture">
+                    <img src="./img/touxiang.jpeg" width="296" height="296" alt="头像">
+                </div>
+                <div class="text">
+                    <div class="profile">
+                        <span class="welcome">Hello
+                            <span class="triangle"></span>
+                        </span>
+                        <h1>I'm chimee</h1>
+                        <p>前端开发工程师</p>
+                        <hr>
+                        <dl>
+                            <dt>年龄</dt>
+                            <dd>23</dd>
+                            <dt>所在城市</dt>
+                            <dd>成都</dd>
+                            <dt>我的邮箱</dt>
+                            <dd>chimee886@gmail.com</dd>
+                            <dt>我的手机号</dt>
+                            <dd>17602839398</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <footer class="media">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-GitHub"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tuite"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-QQ"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weixin"></use>
+                    </svg>
+                </a>
+            </footer>
+        </div>
+
+        <p class="downloads">
+            <a class="downloadbutton" href="#">下载PDF简历</a>
+        </p>
+
+        <p class="selfintroduction">Look how they shine for you,And everything you do,Yeah, they were all Yellow.I came along,I wrote a song for you,And all the things you do,And it was called Yellow.So then I took my turn,Oh what a thing to have done,And it was all Yellow.Your
+            skinOh yeah, your skin and bones,Turn into something beautiful,You know, you know I love you so,You know I love you so.</p>
+    </main>
+    <section data-x id="mySkills" class="skills">
+        <h2>我的技能</h2>
+        <ol class="skill" class="clearfix">
+            <li>
+                <h4>Html 5 &amp; CSS</h4>
+                <div class="progressbar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h4>JavaScript</h4>
+                <div class="progressbar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h4>jQuery</h4>
+                <div class="progressbar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h4>Vue.js</h4>
+                <div class="progressbar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h4>React.js</h4>
+                <div class="progressbar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+            <li>
+                <h4>Node.js</h4>
+                <div class="progressbar">
+                    <div class="progress"></div>
+                </div>
+            </li>
+        </ol>
+    </section>
+    <section data-x id="myPortfolio" class="portfolio">
+        <h2>我的作品集</h2>
+        </script>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img src="./img/works/slides.jpg" class="swiper-slide">
+                <img src="./img/works/canvas.jpg" class="swiper-slide">
+                <img src="./img/works/nav.jpg" class="swiper-slide">
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </section>
+    <section class="messages" id="messages">
+        <h2>留言列表</h2>
+        <ol id="messageList"></ol>
+        <form id="postMessageForm" action="" class="myMessage">
+            <label for="">昵称</label>
+            <input type="text" name="name">
+            <label for="">留言内容</label>
+            <input type="text" name="content">
+            <input type="submit" value="提交">
+        </form>
+    </section>
+</body>
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.2.0/dist/av-min.js"></script>
+<script src="./js/swiper.js"></script>
+<script src="./js/smoothly_navigation.js"></script>
+<script src="./js/sticky_topbar.js"></script>
+<script src="./js/message.js"></script>
+
+</html>

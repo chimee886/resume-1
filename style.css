@@ -1,0 +1,501 @@
+body {
+    background: #EFEFEF;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid#dedede;
+}
+
+a {
+    color: inherit;
+    /*作用继承父级颜色*/
+    text-decoration: none;
+    /*作用是去掉下划线*/
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.topNavBar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: fixed;
+    /*让topNavBar浮动在图片上面，脱离文档流*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.8s;
+}
+
+.topNavBar.sticky {
+    background: white;
+    transition: all 1s;
+    padding: 10px 8px 10px 10px;
+    z-index: 1;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.8);
+}
+
+.topNavBar>nav>ul {
+    list-style: none;
+    margin: 0 20px 0 0;
+    padding: 0;
+    /*list-style列表样式，这句用来去掉小圆点*/
+}
+
+.topNavBar>nav {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.topNavBar>nav>ul>li {
+    float: left;
+    margin-left: 17px;
+    /*文字左边的宽度*/
+    margin-right: 17px;
+    position: relative;
+    /*文字右边的宽度*/
+}
+
+.topNavBar>nav>ul>li>a {
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+    /*解决鼠标悬停时菜单栏抖动的问题*/
+    border-top: 3px solid transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+    /*解决li没有把a包住的问题*/
+}
+
+.acolor {
+    color: #696969;
+}
+
+.topNavBar>nav>ul>li.active>a::after,
+.topNavBar>nav>ul>li.highlight>a::after {
+    position: absolute;
+    content: '';
+    background: #D96F6F;
+    display: ruby;
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    border-radius: 1.5px;
+    animation: navSlide 0.3s;
+}
+
+@keyframes navSlide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%
+    }
+}
+
+.topNavBar .secondLabel {
+    list-style: none;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 111%;
+    background: white;
+    font-size: 14px;
+    color: #3F4450;
+}
+
+.topNavBar li.active>.secondLabel {
+    /*当topnavbar里面的li被active时，.secondLabel就出现！*/
+    display: block;
+    animation: menuslide 0.3s;
+}
+
+@keyframes menuslide {
+    0% {
+        left: -30px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+.secondLabel>li {
+    white-space: nowrap;
+    /*让li里面的内容不分行*/
+    padding: 2px 0;
+    width: 60px;
+    margin: 0 0 0 6px;
+}
+
+.topNavBar>nav>a {
+    float: left;
+}
+
+.topNavBar>nav {
+    float: right;
+    padding-top: 7px;
+}
+
+.topNavBar .logo {
+    font-size: 24px;
+    font-family: "Arial Black";
+    padding-top: 3px;
+    padding-bottom: 4px;
+}
+
+.topNavBar .logo .rs {
+    color: #e06567;
+}
+
+.topNavBar .logo .card {
+    color: grey;
+}
+
+.banner {
+    background-image: url(./img/background.jpg);
+    height: 515px;
+    background-position: center center;
+    /*图片居中显示*/
+    background-size: cover;
+    /*图片按比例缩放*/
+}
+
+.banner .mask {
+    /*遮罩效果*/
+    height: 515px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.userCard {
+    max-width: 930px;
+    height: auto;
+    margin-left: auto;
+    /*这两句是让usercard居中显示*/
+    margin-right: auto;
+    box-shadow: 0px 2px 3px 0px rgba(176, 176, 176, 1);
+}
+
+.welcome {
+    background-color: #e6686a;
+    color: white;
+    display: inline-block;
+    padding: 4px 16px;
+    line-height: 22px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.welcome .triangle {
+    display: inline-block;
+    border: 6px solid #e6686a;
+    width: 0;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    position: absolute;
+    /*相对于父级元素的绝对位置展示，父级元素加上position: relative*/
+    left: 4px;
+    top: 100%;
+}
+
+.userCard .pictureandtext .picture {
+    float: left;
+    margin-right: 65px;
+}
+
+.userCard .pictureandtext .text {
+    float: left;
+    width: 440px;
+}
+
+.userCard .pictureandtext .text hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.userCard .pictureandtext {
+    max-width: 860px;
+    height: 376px;
+    margin-left: auto;
+    /*这两句是让pictureandtext居中显示*/
+    margin-right: auto;
+    padding-top: 30px;
+    background-color: white;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.userCard .pictureandtext .text dl dt,
+.userCard .pictureandtext .text dl dd {
+    float: left;
+    margin: 7px 0;
+}
+
+.userCard .pictureandtext .text dl dt {
+    width: 30%;
+    font-weight: bold;
+}
+
+.userCard .pictureandtext .text dl dd {
+    width: 70%;
+    color: #9da0a7;
+}
+
+.userCard footer.media {
+    background-color: #e6686a;
+    text-align: center;
+}
+
+.userCard footer.media>a {
+    border-radius: 50%;
+    display: inline-block;
+    width: 40px;
+    line-height: 40px;
+    margin: 16px;
+}
+
+.userCard svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    vertical-align: top;
+    /*解决svg上面的空隙比下面小的问题*/
+    margin-top: 8px;
+}
+
+.userCard footer.media>a:hover {
+    background-color: #cf5d5f;
+}
+
+body>main {
+    margin-top: -340px;
+}
+
+body>main .downloads {
+    text-align: center;
+}
+
+body>main>p .downloadbutton {
+    border: 1px solid #CCCDCF;
+    font-size: 16px;
+    padding: 16px 50px;
+    display: inline-block;
+    /*这里是内联元素，不能直接居中，在外面包一个p元素*/
+    border-radius: 3px;
+    margin: 32px 0;
+    transition: box-shadow 0.2s;
+    /*给阴影出现的效果加过度效果*/
+}
+
+body>main .downloadbutton:hover {
+    box-shadow: 0px 4px 7px 1px rgba(176, 176, 176, 1)
+}
+
+.selfintroduction {
+    width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    color: #474A4D;
+    text-align: center;
+    line-height: 26px;
+}
+
+body .skills,
+body .portfolio {
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body .portfolio {
+    text-align: center;
+    vertical-align: top;
+}
+
+body .skills>h2,
+body .portfolio>h2,
+body .messages>h2 {
+    text-align: center;
+    line-height: 48px;
+    margin: 40px 0px 15px 0px;
+    color: #3d4451;
+}
+
+body .skills .skill {
+    list-style: none;
+    border: 1px solid #CCCDCF;
+    box-shadow: 0px 2px 3px 0px rgba(176, 176, 176, 1);
+    background-color: white;
+    padding-bottom: 250px;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 2px;
+}
+
+body .skills .skill .progressbar {
+    height: 5px;
+    background-color: #F7E2E2;
+    max-width: 100%;
+    border-radius: 2px;
+}
+
+body .skills .skill .progress {
+    height: 5px;
+    background-color: #D96F6F;
+    max-width: 30%;
+    border-radius: 2px;
+}
+
+.skills>ol>li {
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+    /*这句的意思是将border算进width的48%里面*/
+    color: #3F4450;
+    line-height: 30px;
+    margin-top: 30px;
+}
+
+section.skills>ol>li:nth-child(even) {
+    /*nth是用来选中第几个儿子（指li是第几个儿子），even是偶数的意思（单数为odd），这句的意思是第偶数个li拥有下面的属性*/
+    float: right;
+}
+
+.skills>ol>li>h4 {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+body .portfolio>nav>ol {
+    display: inline-block;
+    vertical-align: top;
+}
+
+body .portfolio>nav>ol>li {
+    list-style: none;
+    float: left;
+    margin: 0px 20px;
+    cursor: pointer;
+    /*将鼠标的I型改为手型*/
+}
+
+body .portfolio>nav {
+    text-align: center;
+    display: inline-block;
+}
+
+body .portfolio>nav .bar {
+    background: white;
+    height: 5px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+body .portfolio>nav .bar .bar-inner {
+    height: 5px;
+    background: #D96F6F;
+    width: 25%;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+body .portfolio>nav .bar.state-1 .bar-inner {
+    margin-left: 11px;
+}
+
+body .portfolio>nav .bar.state-2 .bar-inner {
+    margin-left: 115px;
+}
+
+body .portfolio>nav .bar.state-3 .bar-inner {
+    margin-left: 221px;
+}
+
+.portfolio .jobs {
+    position: relative;
+    height: 576px;
+    margin-bottom: 100px;
+}
+
+.portfolio .jobs .big,
+.portfolio .jobs .small1,
+.portfolio .jobs .small2 {
+    position: absolute;
+}
+
+.portfolio .jobs .big {
+    top: 0;
+    left: 0;
+}
+
+.portfolio .jobs .small1 {
+    top: 0;
+    left: 634px;
+}
+
+.portfolio .jobs .small2 {
+    top: 298px;
+    left: 634px;
+}
+
+.portfolio .jobs>div .pictureradius {
+    border-radius: 3px;
+    box-shadow: 0px 2px 3px 0px rgba(176, 176, 176, 1);
+}
+
+.portfolio .swiper-container {
+    width: 930px;
+    height: 465px;
+}
+
+.portfolio .swiper-button-next:after {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.portfolio .swiper-button-prev:after {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.portfolio .swiper-pagination-bullet-active {
+    background: rgba(0, 0, 0, 0.6)
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.myMessage {
+    margin: 100px 20px;
+}
+
+section.messages,
+section.messages>ol {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+body .messages>ol>li {
+    padding: 15px 0;
+    list-style: none;
+    border-bottom: 1px solid #ddd
+}

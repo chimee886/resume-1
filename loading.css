@@ -1,0 +1,46 @@
+.welcomeLoading{
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background:white;
+    z-index: 1;/*z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。*/
+    justify-content: center;
+    align-items: center;/*动画居中*/
+}
+.welcomeLoading.active{
+    display: flex;
+}
+
+.loadingCircle{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.loadingCircle::before,.loadingCircle::after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    background:#686868;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;/*上下左右都是0，margin为auto居中了*/
+    animation: s 1.8s infinite;/*infinite是设置循环播放*/
+}
+
+.loadingCircle::after{
+    animation-delay: 0.9s;
+}
+
+@keyframes s{
+    0%{
+        width: 0; height: 0; opacity: 1;/*capacity  不透明度*/
+    }
+    100%{
+        width: 50px; height: 50px; opacity: 0;
+    }
+}/*声明一个keyframes，开始的状态和结束的状态  s是随便取的*/
